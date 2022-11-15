@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crud.crud_project.HelloController">
+   <Label layoutX="222.0" layoutY="29.0" prefHeight="49.0" prefWidth="443.0" text="Student Crud Operation">
+      <font>
+         <Font name="Baskerville Old Face" size="33.0" />
+      </font>
+   </Label>
+   <Pane layoutX="21.0" layoutY="95.0" prefHeight="244.0" prefWidth="286.0" style="-fx-background-color: black;">
+      <Label layoutX="21.0" layoutY="33.0" prefHeight="31.0" prefWidth="69.0" text="Usernname" textFill="WHITE">
+         <font>
+            <Font name="Arial Nova Light" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="83.0" prefHeight="31.0" prefWidth="69.0" text="Course" textFill="WHITE">
+         <font>
+            <Font name="Arial Nova Light" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="163.0" prefHeight="31.0" prefWidth="69.0" text="Gender" textFill="WHITE">
+         <font>
+            <Font name="Arial Nova Light" size="12.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="GenderMale" layoutX="102.0" layoutY="170.0" mnemonicParsing="false" text="Male" textFill="#f8f0f0">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="GenderFemale" layoutX="172.0" layoutY="170.0" mnemonicParsing="false" text="Female" textFill="WHITE" toggleGroup="$gender" />
+      <RadioButton fx:id="GenderOthers" layoutX="119.0" layoutY="214.0" mnemonicParsing="false" text="Others" textFill="#f8f4f4" toggleGroup="$gender" />
+      <Label layoutX="21.0" layoutY="123.0" prefHeight="31.0" prefWidth="92.0" text="Mobile Number" textFill="WHITE">
+         <font>
+            <Font name="Arial Nova Light" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="MobileNumber" layoutX="113.0" layoutY="126.0" />
+      <JFXComboBox fx:id="CourseComboBox" layoutX="112.0" layoutY="86.0" prefHeight="26.0" prefWidth="152.0" promptText="Select the course" visibleRowCount="5" />
+      <TextField fx:id="UserNameTextInGUi" layoutX="118.0" layoutY="31.0" />
+   </Pane>
+   <TableView fx:id="tableToDisplay" layoutX="334.0" layoutY="95.0" prefHeight="286.0" prefWidth="473.0">
+      <columns>
+         <TableColumn fx:id="UserId" prefWidth="75.0" text="ID" />
+         <TableColumn fx:id="UserName" prefWidth="75.0" text="Username" />
+         <TableColumn fx:id="UserCourse" prefWidth="75.0" text="Course" />
+         <TableColumn fx:id="UserGender" prefWidth="77.0" text="Gender" />
+         <TableColumn fx:id="StartDate" prefWidth="75.0" text="Start Date" />
+         <TableColumn fx:id="MobileNumberTable" prefWidth="99.0" text="Mobile Number" />
+      </columns>
+   </TableView>
+   <JFXButton layoutX="31.0" layoutY="373.0" onAction="#OnClickAdd" prefHeight="31.0" prefWidth="69.0" style="-fx-background-color: #1F8FE8;" text="Add" />
+   <JFXButton layoutX="121.0" layoutY="373.0" onAction="#OnClickUpdate" style="-fx-background-color: #1F8FE8;" text="Update" />
+   <JFXButton layoutX="211.0" layoutY="373.0" onAction="#OnClickDelete" style="-fx-background-color: #1F8FE8;" text="Delete" />
+</AnchorPane>
